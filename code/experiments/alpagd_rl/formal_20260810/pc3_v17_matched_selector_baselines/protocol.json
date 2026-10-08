@@ -1,0 +1,28 @@
+{
+  "schema": "pc3-v17-selector-baselines-protocol/v1",
+  "frozen_at": "2026-08-28T00:00:00+10:00",
+  "relationship_to_v13": "P2 within-fixture matched selector comparison; v13 outputs are never modified or pooled into a new acquisition chain.",
+  "corruption": "P2 graph and v13 fixture",
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914],
+  "streams": [0, 1],
+  "acquisition_worlds": [1420001, 1420040],
+  "evaluation_worlds": [1430001, 1430100],
+  "horizon": 10000,
+  "target_window": 1000,
+  "acquisition_arms": {
+    "N": "ordinary graph-private provider",
+    "R": "matched-random challenge from the common graph-private frontier",
+    "UQ": "uncertainty-only challenge from the common graph-private frontier",
+    "ES": "v13 decision-impact frontier challenge"
+  },
+  "evaluation_arms": {"O": "fixed correct graph", "F": "fixed P2 graph", "N": "frozen natural graph", "R": "frozen matched-random graph", "UQ": "frozen uncertainty-only graph", "ES": "frozen evidence-seeking graph"},
+  "common_frontier": "unfinished targets with exactly one unfinished current-provider blocker, provider-eligible blocker, public achievement mask, and v13 pair-memory exclusions",
+  "R_rule": "Sort the eligible common frontier by pair_key and select index floor(fixed_selector_uniform * n). The independent selector uniform stream is preregistered and not reused for provider selection.",
+  "UQ_rule": "Select the eligible common-frontier candidate maximizing binary entropy of its current evidence-edge belief. Equivalently, minimize abs(p-0.5); use the fixed selector uniform only to break exact ties. It never reads decision impact, corruption labels, reference graph, correct order, or outcomes.",
+  "ES_rule": "v13 counterfactual provider-decision-impact scorer, with the same common frontier and pair-memory rule.",
+  "pair_memory": {"max_challenges_per_world": 3, "zero_yield_attempts_before_cooldown": 3, "cooldown_worlds": 3, "retire_on_first_provider_decision_movement": true},
+  "forbidden_inputs": ["corruption_label", "reference_graph", "correct_order", "hidden_state", "outcome_result", "policy_input"],
+  "randomness": "Target and action uniforms remain paired across arms. R/UQ/ES selector tie/random uniforms use a distinct deterministic SeedSequence kind=31, so no selector consumes an ordinary-provider target draw.",
+  "freeze": "All acquired graphs freeze before evaluation. Evaluation calls ordinary provider selection only: no challenge selection, graph update, or optimizer step.",
+  "fatal_only": ["model/environment/process failure", "nonfinite", "arm/data mixing", "checkpoint load failure", "corrupt output"]
+}

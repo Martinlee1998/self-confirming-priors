@@ -1,0 +1,477 @@
+{
+  "analysis_kind": "frozen_record_reanalysis_no_new_rollouts",
+  "broad_hashing_performed": false,
+  "crossed_bootstrap": {
+    "base_seed": 2026082600,
+    "interpretation": "sensitivity analysis only; intervals are not hard gates and do not replace the registered descriptive world/chain intervals",
+    "interval": "percentile_95",
+    "replicates_per_study_design": 10000,
+    "rows": [
+      {
+        "bootstrap_mean": 0.11479410000000001,
+        "cluster_resampling": "8 controller-by-stream chains resampled; streams may separate",
+        "contrast": "U_minus_F",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "chain_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.033,
+        "percentile_97_5": 0.19824999999999998,
+        "permutation": "P1",
+        "point_estimate": 0.11375,
+        "replicates": 10000,
+        "seed": 2026082601,
+        "sensitivity_only": true,
+        "study": "v11_P1",
+        "worlds_resampled": 100
+      },
+      {
+        "bootstrap_mean": 0.1130246,
+        "cluster_resampling": "4 controllers resampled as clusters; both streams retained",
+        "contrast": "U_minus_F",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "controller_cluster_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.0,
+        "percentile_97_5": 0.23324999999999999,
+        "permutation": "P1",
+        "point_estimate": 0.11375,
+        "replicates": 10000,
+        "seed": 2026082602,
+        "sensitivity_only": true,
+        "study": "v11_P1",
+        "worlds_resampled": 100
+      },
+      {
+        "bootstrap_mean": 0.0,
+        "cluster_resampling": "8 controller-by-stream chains resampled; streams may separate",
+        "contrast": "U_minus_F",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "chain_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.0,
+        "percentile_97_5": 0.0,
+        "permutation": "P2",
+        "point_estimate": 0.0,
+        "replicates": 10000,
+        "seed": 2026082611,
+        "sensitivity_only": true,
+        "study": "v11_P2",
+        "worlds_resampled": 100
+      },
+      {
+        "bootstrap_mean": 0.0,
+        "cluster_resampling": "4 controllers resampled as clusters; both streams retained",
+        "contrast": "U_minus_F",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "controller_cluster_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.0,
+        "percentile_97_5": 0.0,
+        "permutation": "P2",
+        "point_estimate": 0.0,
+        "replicates": 10000,
+        "seed": 2026082612,
+        "sensitivity_only": true,
+        "study": "v11_P2",
+        "worlds_resampled": 100
+      },
+      {
+        "bootstrap_mean": 0.33243205,
+        "cluster_resampling": "8 controller-by-stream chains resampled; streams may separate",
+        "contrast": "E_minus_N",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "chain_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.31575,
+        "percentile_97_5": 0.34850000000000003,
+        "permutation": "P2",
+        "point_estimate": 0.3325,
+        "replicates": 10000,
+        "seed": 2026082621,
+        "sensitivity_only": true,
+        "study": "v12",
+        "worlds_resampled": 100
+      },
+      {
+        "bootstrap_mean": 0.3325654,
+        "cluster_resampling": "4 controllers resampled as clusters; both streams retained",
+        "contrast": "E_minus_N",
+        "crossing": "one independently resampled world vector crossed with one independently resampled chain/controller vector per replicate",
+        "design": "controller_cluster_x_world",
+        "hard_gate": false,
+        "interval": "percentile_95",
+        "percentile_2_5": 0.3145,
+        "percentile_97_5": 0.34924999999999995,
+        "permutation": "P2",
+        "point_estimate": 0.3325,
+        "replicates": 10000,
+        "seed": 2026082622,
+        "sensitivity_only": true,
+        "study": "v12",
+        "worlds_resampled": 100
+      }
+    ]
+  },
+  "field_provenance": {
+    "achievement_hits": "arms.<arm>.final_achievements.A--E",
+    "behavior": "evaluation arms.<arm>.R",
+    "chain_identity": "row.identity plus controller_/stream_/world_ path",
+    "edge_beliefs": "last sequential acquisition row graphs_after.<arm>.alpha/beta",
+    "evidence_counts": "acquisition arms.<arm>.first_hit_order; v12 explicit B_to_C_positive_evidence_added and C_to_B_counterevidence_added are cross-check fields",
+    "full_graph_delta": "v12 final sequential acquisition graphs_after.N/E versus the shared P2 initial alpha/beta state; all 20 non-self ordered edges",
+    "prefix_depth": "arms.<arm>.canonical_prefix_depth",
+    "recorded_provider_tv": "evaluation standardized_target_tv; recomputed from frozen graph",
+    "threshold_crossing": "graphs_after at each acquisition-world boundary; strict p>0.5"
+  },
+  "known_missing_or_resolution_limits": [
+    "No per-mask sampled target or per-mask target uniform was stored; the script recomputes distributions and eligible decision supports.",
+    "Threshold crossing is identifiable after each acquisition world, not at an exact within-world environment step.",
+    "World rows store outcome summaries rather than full action/state trajectories; no rollout is regenerated.",
+    "World-conditional tables are descriptive row conditioning with repeated controllers/streams, not independent inferential strata."
+  ],
+  "output_root": "<workspace>/paper_pc3_conditional_mechanism_revision_20260826\\data\\reanalysis",
+  "outputs": [
+    "achievement_hit_rates.csv",
+    "chain_behavior.csv",
+    "controller_summary.csv",
+    "crossed_bootstrap.csv",
+    "edge_beliefs.csv",
+    "evidence_counts.csv",
+    "full_graph_delta.csv",
+    "prefix_depth_distribution.csv",
+    "provider_mask_decisions.csv",
+    "provider_summary.csv",
+    "sensitivity.csv",
+    "source_inventory.csv",
+    "threshold_crossings.csv",
+    "world_conditional.csv",
+    "world_effects.csv"
+  ],
+  "provider_recalculation": {
+    "cycle_fallback": "uniform over unfinished targets with minimum posterior obstruction",
+    "equivalence_reported": "recomputed provider-distribution and eligible-support equivalence",
+    "mask_definition": "all 2^5 achieved masks except the all-complete mask; target_age=0",
+    "masks": 31,
+    "max_absolute_difference_from_recorded_tv": 0.0,
+    "recorded_per_mask_sampled_targets_available": false,
+    "strict_edge_rule": "active iff alpha/(alpha+beta) > 0.5"
+  },
+  "raw_root": "<workspace>/paper_pc3_conditional_mechanism_revision_20260826\\data\\reanalysis_raw",
+  "schema": "pc3-frozen-row-reanalysis/v1",
+  "source_inventory": [
+    {
+      "bytes": 1629273,
+      "files": 320,
+      "hashes_computed": false,
+      "permutation": "P1",
+      "phase": "acquisition",
+      "relative_path": "pc3_v11_graph_recovery_20260826/P1/acquisition",
+      "study": "v11_P1",
+      "source_records": "pc3_v11_graph_recovery_20260826/artifacts/P1/acquisition"
+    },
+    {
+      "bytes": 3063929,
+      "files": 800,
+      "hashes_computed": false,
+      "permutation": "P1",
+      "phase": "evaluation",
+      "relative_path": "pc3_v11_graph_recovery_20260826/P1/evaluation",
+      "study": "v11_P1",
+      "source_records": "pc3_v11_graph_recovery_20260826/artifacts/P1/evaluation"
+    },
+    {
+      "bytes": 1627704,
+      "files": 320,
+      "hashes_computed": false,
+      "permutation": "P2",
+      "phase": "acquisition",
+      "relative_path": "pc3_v11_graph_recovery_20260826/P2/acquisition",
+      "study": "v11_P2",
+      "source_records": "pc3_v11_graph_recovery_20260826/artifacts/P2/acquisition"
+    },
+    {
+      "bytes": 3064241,
+      "files": 800,
+      "hashes_computed": false,
+      "permutation": "P2",
+      "phase": "evaluation",
+      "relative_path": "pc3_v11_graph_recovery_20260826/P2/evaluation",
+      "study": "v11_P2",
+      "source_records": "pc3_v11_graph_recovery_20260826/artifacts/P2/evaluation"
+    },
+    {
+      "bytes": 1909822,
+      "files": 320,
+      "hashes_computed": false,
+      "permutation": "P2",
+      "phase": "acquisition",
+      "relative_path": "pc3_v12_evidence_availability_20260826/acquisition",
+      "study": "v12",
+      "source_records": "pc3_v12_evidence_availability_20260826/artifacts/acquisition"
+    },
+    {
+      "bytes": 4308256,
+      "files": 800,
+      "hashes_computed": false,
+      "permutation": "P2",
+      "phase": "evaluation",
+      "relative_path": "pc3_v12_evidence_availability_20260826/evaluation",
+      "study": "v12",
+      "source_records": "pc3_v12_evidence_availability_20260826/artifacts/evaluation"
+    }
+  ],
+  "studies": {
+    "v11_P1": {
+      "forward_evidence_chain_interval": {
+        "estimate": 18.0,
+        "lower": 4.342960615397905,
+        "n": 8,
+        "se": 5.775564289066727,
+        "t_critical": 2.3646242516,
+        "upper": 31.657039384602093
+      },
+      "four_controller_aggregation": {
+        "forward_evidence_per_chain": {
+          "controller_estimates": {
+            "2026081911": 34.0,
+            "2026081912": 0.0,
+            "2026081913": 32.0,
+            "2026081914": 6.0
+          },
+          "descriptive_only": true,
+          "max": 34.0,
+          "mean": 18.0,
+          "min": 0.0,
+          "n_controllers": 4
+        },
+        "primary_behavior_delta_R": {
+          "controller_estimates": {
+            "2026081911": 0.19699999999999998,
+            "2026081912": 0.0,
+            "2026081913": 0.258,
+            "2026081914": 0.0
+          },
+          "descriptive_only": true,
+          "max": 0.258,
+          "mean": 0.11374999999999999,
+          "min": 0.0,
+          "n_controllers": 4
+        },
+        "provider_recovery": {
+          "controller_estimates": {
+            "2026081911": 0.25806451612903225,
+            "2026081912": 0.0,
+            "2026081913": 0.25806451612903225,
+            "2026081914": 0.0
+          },
+          "descriptive_only": true,
+          "max": 0.25806451612903225,
+          "mean": 0.12903225806451613,
+          "min": 0.0,
+          "n_controllers": 4
+        }
+      },
+      "permutation": "P1",
+      "primary_behavior_contrast": "U-F",
+      "primary_behavior_world_interval": {
+        "estimate": 0.11375,
+        "lower": 0.10001714232966266,
+        "n": 100,
+        "se": 0.006921046440993142,
+        "t_critical": 1.9842169515,
+        "upper": 0.12748285767033735
+      },
+      "provider_recovery_chain_interval": {
+        "estimate": 0.12903225806451613,
+        "lower": 0.013710456887634559,
+        "n": 8,
+        "se": 0.04876960942054544,
+        "t_critical": 2.3646242516,
+        "upper": 0.2443540592413977
+      }
+    },
+    "v11_P2": {
+      "forward_evidence_chain_interval": {
+        "estimate": 0.0,
+        "lower": 0.0,
+        "n": 8,
+        "se": 0.0,
+        "t_critical": 2.3646242516,
+        "upper": 0.0
+      },
+      "four_controller_aggregation": {
+        "forward_evidence_per_chain": {
+          "controller_estimates": {
+            "2026081911": 0.0,
+            "2026081912": 0.0,
+            "2026081913": 0.0,
+            "2026081914": 0.0
+          },
+          "descriptive_only": true,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "n_controllers": 4
+        },
+        "primary_behavior_delta_R": {
+          "controller_estimates": {
+            "2026081911": 0.0,
+            "2026081912": 0.0,
+            "2026081913": 0.0,
+            "2026081914": 0.0
+          },
+          "descriptive_only": true,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "n_controllers": 4
+        },
+        "provider_recovery": {
+          "controller_estimates": {
+            "2026081911": 0.0,
+            "2026081912": 0.0,
+            "2026081913": 0.0,
+            "2026081914": 0.0
+          },
+          "descriptive_only": true,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "n_controllers": 4
+        }
+      },
+      "permutation": "P2",
+      "primary_behavior_contrast": "U-F",
+      "primary_behavior_world_interval": {
+        "estimate": 0.0,
+        "lower": 0.0,
+        "n": 100,
+        "se": 0.0,
+        "t_critical": 1.9842169515,
+        "upper": 0.0
+      },
+      "provider_recovery_chain_interval": {
+        "estimate": 0.0,
+        "lower": 0.0,
+        "n": 8,
+        "se": 0.0,
+        "t_critical": 2.3646242516,
+        "upper": 0.0
+      }
+    },
+    "v12": {
+      "forward_evidence_chain_interval": {
+        "estimate": 25.875,
+        "lower": 23.665919657534896,
+        "n": 8,
+        "se": 0.9342204542520234,
+        "t_critical": 2.3646242516,
+        "upper": 28.084080342465104
+      },
+      "four_controller_aggregation": {
+        "forward_evidence_per_chain": {
+          "controller_estimates": {
+            "2026081911": 25.5,
+            "2026081912": 26.0,
+            "2026081913": 28.5,
+            "2026081914": 23.5
+          },
+          "descriptive_only": true,
+          "max": 28.5,
+          "mean": 25.875,
+          "min": 23.5,
+          "n_controllers": 4
+        },
+        "primary_behavior_delta_R": {
+          "controller_estimates": {
+            "2026081911": 0.336,
+            "2026081912": 0.317,
+            "2026081913": 0.345,
+            "2026081914": 0.33199999999999996
+          },
+          "descriptive_only": true,
+          "max": 0.345,
+          "mean": 0.3325,
+          "min": 0.317,
+          "n_controllers": 4
+        },
+        "provider_recovery": {
+          "controller_estimates": {
+            "2026081911": 0.12903225806451613,
+            "2026081912": 0.12903225806451613,
+            "2026081913": 0.12903225806451613,
+            "2026081914": 0.12903225806451613
+          },
+          "descriptive_only": true,
+          "max": 0.12903225806451613,
+          "mean": 0.12903225806451613,
+          "min": 0.12903225806451613,
+          "n_controllers": 4
+        }
+      },
+      "permutation": "P2",
+      "primary_behavior_contrast": "E-N",
+      "primary_behavior_world_interval": {
+        "estimate": 0.3325,
+        "lower": 0.3197210770461302,
+        "n": 100,
+        "se": 0.006440285143320341,
+        "t_critical": 1.9842169515,
+        "upper": 0.34527892295386986
+      },
+      "provider_recovery_chain_interval": {
+        "estimate": 0.12903225806451613,
+        "lower": 0.12903225806451613,
+        "n": 8,
+        "se": 0.0,
+        "t_critical": 2.3646242516,
+        "upper": 0.12903225806451613
+      }
+    }
+  },
+  "v12_full_graph_delta": {
+    "changed_decision_rows_by_arm": {
+      "E": 16,
+      "N": 0
+    },
+    "changed_numeric_rows_by_arm": {
+      "E": 66,
+      "N": 0
+    },
+    "decision_class": "edge active iff probability strictly exceeds 0.5",
+    "expected_rows": 320,
+    "nonself_ordered_edges_per_chain_arm": 20,
+    "rows": 320
+  },
+  "validations": {
+    "v11_P1": {
+      "arm_optimizer_nonzero_rows": 0,
+      "canonical_prefix_derivation_errors": 0,
+      "evaluation_graphs_not_frozen_rows": 0,
+      "passed": true,
+      "r_equals_depth_over_5_errors": 0,
+      "v12_evaluation_instrument_enabled_rows": 0
+    },
+    "v11_P2": {
+      "arm_optimizer_nonzero_rows": 0,
+      "canonical_prefix_derivation_errors": 0,
+      "evaluation_graphs_not_frozen_rows": 0,
+      "passed": true,
+      "r_equals_depth_over_5_errors": 0,
+      "v12_evaluation_instrument_enabled_rows": 0
+    },
+    "v12": {
+      "arm_optimizer_nonzero_rows": 0,
+      "canonical_prefix_derivation_errors": 0,
+      "evaluation_graphs_not_frozen_rows": 0,
+      "passed": true,
+      "r_equals_depth_over_5_errors": 0,
+      "v12_evaluation_instrument_enabled_rows": 0
+    }
+  }
+}

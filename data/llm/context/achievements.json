@@ -1,0 +1,37 @@
+{
+  "source_id": "crafter_achievements_v1",
+  "environment": "Crafter",
+  "source_url": "https://raw.githubusercontent.com/danijar/crafter/main/crafter/data.yaml",
+  "source_status": "public_source_plan_from_g2_not_local_environment_runtime",
+  "is_reference_graph": false,
+  "is_evaluation_only_graph": false,
+  "achievement_ids": [
+    "collect_coal",
+    "collect_diamond",
+    "collect_drink",
+    "collect_iron",
+    "collect_sapling",
+    "collect_stone",
+    "collect_wood",
+    "defeat_skeleton",
+    "defeat_zombie",
+    "eat_cow",
+    "eat_plant",
+    "make_iron_pickaxe",
+    "make_iron_sword",
+    "make_stone_pickaxe",
+    "make_stone_sword",
+    "make_wood_pickaxe",
+    "make_wood_sword",
+    "place_furnace",
+    "place_plant",
+    "place_stone",
+    "place_table",
+    "wake_up"
+  ],
+  "notes": [
+    "This artifact records the planned achievement ID set for schema validation.",
+    "It is not a reference graph and does not assert edge truth.",
+    "It was created without installing or running Crafter."
+  ]
+}

@@ -1,0 +1,794 @@
+{
+  "controllers": [
+    2026081911,
+    2026081912,
+    2026081913,
+    2026081914
+  ],
+  "descriptive": {
+    "D": {
+      "E_hit": 0.0,
+      "Q": 0.10575000000000001,
+      "R": 0.10575000000000001,
+      "full_chain": 0.0,
+      "native_return": 2.2672499999999998
+    },
+    "F": {
+      "E_hit": 0.0,
+      "Q": 0.20125,
+      "R": 0.20125,
+      "full_chain": 0.0,
+      "native_return": 3.0172499999999998
+    },
+    "O": {
+      "E_hit": 0.00375,
+      "Q": 0.53175,
+      "R": 0.53175,
+      "full_chain": 0.00375,
+      "native_return": 6.302874999999999
+    },
+    "U": {
+      "E_hit": 0.0,
+      "Q": 0.20125,
+      "R": 0.20125,
+      "full_chain": 0.0,
+      "native_return": 3.0172499999999998
+    }
+  },
+  "optimizer_steps": 0,
+  "permutation": "P2",
+  "phase": "merged_evaluation",
+  "primary": {
+    "behavior_U_minus_F": {
+      "estimate": 0.0,
+      "independent_level": "evaluation_world",
+      "lower": 0.0,
+      "n": 100,
+      "se": 0.0,
+      "t_critical": 1.9842169515,
+      "upper": 0.0
+    },
+    "damage_O_minus_F": {
+      "estimate": 0.33049999999999996,
+      "independent_level": "evaluation_world",
+      "lower": 0.3185019450493779,
+      "n": 100,
+      "se": 0.006046745514169693,
+      "t_critical": 1.9842169515,
+      "upper": 0.342498054950622
+    },
+    "language_U_minus_D": {
+      "estimate": 0.0955,
+      "independent_level": "evaluation_world",
+      "lower": 0.0824538983344086,
+      "n": 100,
+      "se": 0.006574937108429098,
+      "t_critical": 1.9842169515,
+      "upper": 0.10854610166559141
+    },
+    "recovery_fraction": {
+      "definition": "behavior_U_minus_F / damage_O_minus_F",
+      "estimate": 0.0
+    },
+    "target_recovery": {
+      "estimate": 0.0,
+      "independent_level": "frozen_controller_stream_acquisition_chain",
+      "lower": 0.0,
+      "n": 8,
+      "note": "one provider-derived value per chain; not 100 replicated world observations",
+      "se": 0.0,
+      "t_critical": 2.3646242516,
+      "upper": 0.0
+    }
+  },
+  "rows": 800,
+  "schema": "pc3-v11-graph-recovery/v1",
+  "streams": [
+    0,
+    1
+  ],
+  "world_metrics": {
+    "1330001": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.4,
+      "language_U_minus_D": 0.2,
+      "target_recovery": 0.0
+    },
+    "1330002": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330003": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 1.3877787807814457e-17,
+      "target_recovery": 0.0
+    },
+    "1330004": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330005": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330006": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330007": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330008": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330009": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330010": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": -0.04999999999999999,
+      "target_recovery": 0.0
+    },
+    "1330011": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330012": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.2,
+      "target_recovery": 0.0
+    },
+    "1330013": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.02500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330014": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330015": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330016": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330017": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.05,
+      "target_recovery": 0.0
+    },
+    "1330018": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330019": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330020": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330021": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": -0.025,
+      "target_recovery": 0.0
+    },
+    "1330022": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330023": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330024": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330025": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.05000000000000001,
+      "target_recovery": 0.0
+    },
+    "1330026": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330027": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330028": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.4,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330029": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": -0.04999999999999999,
+      "target_recovery": 0.0
+    },
+    "1330030": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330031": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.05000000000000001,
+      "target_recovery": 0.0
+    },
+    "1330032": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.2,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330033": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.225,
+      "language_U_minus_D": 0.05,
+      "target_recovery": 0.0
+    },
+    "1330034": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330035": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330036": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330037": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330038": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330039": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330040": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330041": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.475,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330042": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.225,
+      "language_U_minus_D": 0.15,
+      "target_recovery": 0.0
+    },
+    "1330043": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330044": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330045": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330046": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.425,
+      "language_U_minus_D": -0.025,
+      "target_recovery": 0.0
+    },
+    "1330047": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.15000000000000002,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330048": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330049": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": -0.024999999999999994,
+      "target_recovery": 0.0
+    },
+    "1330050": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": -0.15,
+      "target_recovery": 0.0
+    },
+    "1330051": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330052": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330053": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330054": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330055": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330056": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.02500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330057": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.02500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330058": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.02500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330059": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330060": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330061": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330062": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.2,
+      "target_recovery": 0.0
+    },
+    "1330063": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.27499999999999997,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330064": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330065": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.05000000000000001,
+      "target_recovery": 0.0
+    },
+    "1330066": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.47500000000000003,
+      "language_U_minus_D": -0.024999999999999994,
+      "target_recovery": 0.0
+    },
+    "1330067": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.05000000000000001,
+      "target_recovery": 0.0
+    },
+    "1330068": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.15,
+      "target_recovery": 0.0
+    },
+    "1330069": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.05000000000000001,
+      "target_recovery": 0.0
+    },
+    "1330070": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330071": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330072": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330073": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330074": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330075": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.05,
+      "target_recovery": 0.0
+    },
+    "1330076": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330077": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.425,
+      "language_U_minus_D": 0.025000000000000015,
+      "target_recovery": 0.0
+    },
+    "1330078": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.27499999999999997,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330079": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.275,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330080": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": -0.09999999999999998,
+      "target_recovery": 0.0
+    },
+    "1330081": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.025000000000000015,
+      "target_recovery": 0.0
+    },
+    "1330082": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330083": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.05,
+      "target_recovery": 0.0
+    },
+    "1330084": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.25,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330085": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.39999999999999997,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330086": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.27499999999999997,
+      "language_U_minus_D": 0.17500000000000002,
+      "target_recovery": 0.0
+    },
+    "1330087": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330088": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330089": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330090": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.2,
+      "language_U_minus_D": 0.125,
+      "target_recovery": 0.0
+    },
+    "1330091": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.07500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330092": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": -0.024999999999999994,
+      "target_recovery": 0.0
+    },
+    "1330093": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.35,
+      "language_U_minus_D": 0.02500000000000001,
+      "target_recovery": 0.0
+    },
+    "1330094": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330095": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.425,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330096": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.17500000000000002,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330097": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.32499999999999996,
+      "language_U_minus_D": 0.15000000000000002,
+      "target_recovery": 0.0
+    },
+    "1330098": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.3,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330099": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.425,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    },
+    "1330100": {
+      "behavior_U_minus_F": 0.0,
+      "damage_O_minus_F": 0.375,
+      "language_U_minus_D": 0.1,
+      "target_recovery": 0.0
+    }
+  },
+  "worlds": [
+    1330001,
+    1330002,
+    1330003,
+    1330004,
+    1330005,
+    1330006,
+    1330007,
+    1330008,
+    1330009,
+    1330010,
+    1330011,
+    1330012,
+    1330013,
+    1330014,
+    1330015,
+    1330016,
+    1330017,
+    1330018,
+    1330019,
+    1330020,
+    1330021,
+    1330022,
+    1330023,
+    1330024,
+    1330025,
+    1330026,
+    1330027,
+    1330028,
+    1330029,
+    1330030,
+    1330031,
+    1330032,
+    1330033,
+    1330034,
+    1330035,
+    1330036,
+    1330037,
+    1330038,
+    1330039,
+    1330040,
+    1330041,
+    1330042,
+    1330043,
+    1330044,
+    1330045,
+    1330046,
+    1330047,
+    1330048,
+    1330049,
+    1330050,
+    1330051,
+    1330052,
+    1330053,
+    1330054,
+    1330055,
+    1330056,
+    1330057,
+    1330058,
+    1330059,
+    1330060,
+    1330061,
+    1330062,
+    1330063,
+    1330064,
+    1330065,
+    1330066,
+    1330067,
+    1330068,
+    1330069,
+    1330070,
+    1330071,
+    1330072,
+    1330073,
+    1330074,
+    1330075,
+    1330076,
+    1330077,
+    1330078,
+    1330079,
+    1330080,
+    1330081,
+    1330082,
+    1330083,
+    1330084,
+    1330085,
+    1330086,
+    1330087,
+    1330088,
+    1330089,
+    1330090,
+    1330091,
+    1330092,
+    1330093,
+    1330094,
+    1330095,
+    1330096,
+    1330097,
+    1330098,
+    1330099,
+    1330100
+  ]
+}

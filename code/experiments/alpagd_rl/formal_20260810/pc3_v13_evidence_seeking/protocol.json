@@ -1,0 +1,21 @@
+{
+  "schema": "pc3-v13-evidence-seeking-protocol/v1",
+  "frozen_at": "2026-08-27T00:00:00+10:00",
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914],
+  "streams": [0, 1],
+  "targets": {"A": "place_table", "B": "make_wood_pickaxe", "C": "collect_stone", "D": "make_stone_pickaxe", "E": "collect_iron"},
+  "initial_prior": "fixed P2-corrupted five-node graph reused from PC3-v12",
+  "acquisition_worlds": [1360001, 1360040],
+  "evaluation_worlds": [1370001, 1370100],
+  "horizon": 10000,
+  "target_window": 1000,
+  "acquisition_arms": {"N": "ordinary graph-private provider", "ES": "non-oracle frontier challenge"},
+  "evaluation_arms": {"O": "fixed correct graph", "F": "fixed P2-corrupted graph", "N": "frozen natural graph", "ES": "frozen evidence-seeking graph"},
+  "historical_ceiling": "PC3-v12 order-informed acquisition is retained as a completed positive control and is not rerun.",
+  "es_inputs_only": ["current_provider_graph", "public_achievement_mask", "fixed_target_uniform", "challenge_history"],
+  "es_forbidden_inputs": ["corruption_label", "reference_graph", "correct_order", "hidden_state", "policy_input", "outcome_result"],
+  "pair_memory": {"max_pair_attempts_per_world": 1, "max_challenges_per_achieved_mask_per_world": 1, "max_challenges_per_world": 3, "zero_yield_attempts_before_cooldown": 3, "cooldown_worlds": 3, "retire_on_first_provider_decision_movement": true},
+  "soft_progress_policy": {"early_world_id": 1360010, "continue_if": "selector mechanics are healthy; evidence and provider movement are progress signals, not stop gates", "if_mechanically_inert": "permit one minimal frontier-rule repair with a fresh namespace; do not tune on weak result size"},
+  "freeze": "all acquired graphs freeze before evaluation; evaluation has no evidence-seeking rule, graph update, or optimizer step",
+  "fatal_only": ["model/environment/process failure", "nonfinite", "arm/data mixing", "checkpoint load failure", "ES forbidden input", "corrupt output"]
+}

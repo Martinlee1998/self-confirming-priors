@@ -1,0 +1,388 @@
+{
+  "reference_graph_id": "alpagd_reference_graph_crafter_v1",
+  "gate_id": "alpagd_g8_reference_graph_construction_v1",
+  "environment": "Crafter",
+  "source_context_id": "crafter_achievements_v1",
+  "manual_context_id": "crafter_manual_context_v1",
+  "annotation_guidelines_id": "alpagd_reference_graph_annotation_guidelines_v1",
+  "is_evaluation_only": true,
+  "must_not_be_used_by_agent": true,
+  "must_not_be_used_in_llm_prompt": true,
+  "must_not_be_used_as_posterior_truth_input": true,
+  "nodes": [
+    "collect_coal",
+    "collect_diamond",
+    "collect_drink",
+    "collect_iron",
+    "collect_sapling",
+    "collect_stone",
+    "collect_wood",
+    "defeat_skeleton",
+    "defeat_zombie",
+    "eat_cow",
+    "eat_plant",
+    "make_iron_pickaxe",
+    "make_iron_sword",
+    "make_stone_pickaxe",
+    "make_stone_sword",
+    "make_wood_pickaxe",
+    "make_wood_sword",
+    "place_furnace",
+    "place_plant",
+    "place_stone",
+    "place_table",
+    "wake_up"
+  ],
+  "edges": [
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "place_table",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: placing a table consumes wood.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes no table is otherwise available as an existing placed object.",
+      "annotation_note": "Wood resource is required for place_table achievement."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_wood_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a wood pickaxe consumes wood.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires table proximity.",
+      "annotation_note": "Wood item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_wood_pickaxe",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making a wood pickaxe requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates the crafting affordance."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_wood_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a wood sword consumes wood.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires table proximity.",
+      "annotation_note": "Wood item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_wood_sword",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making a wood sword requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates the crafting affordance."
+    },
+    {
+      "from_achievement": "make_wood_pickaxe",
+      "to_achievement": "collect_stone",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: collecting stone requires a wood pickaxe.",
+      "confidence": 0.98,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Direct rule dependency.",
+      "annotation_note": "Tool gate for stone collection."
+    },
+    {
+      "from_achievement": "make_wood_pickaxe",
+      "to_achievement": "collect_coal",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: collecting coal requires a wood pickaxe.",
+      "confidence": 0.98,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Direct rule dependency.",
+      "annotation_note": "Tool gate for coal collection."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "place_stone",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: placing stone consumes stone.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Requires a valid placement surface.",
+      "annotation_note": "Stone resource is directly consumed."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "place_furnace",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: placing a furnace consumes stone.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Requires a valid placement surface.",
+      "annotation_note": "Stone resource is directly consumed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a stone pickaxe consumes wood and stone.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires stone and table proximity.",
+      "annotation_note": "Wood item remains part of stone tool recipe."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a stone pickaxe consumes stone.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood and table proximity.",
+      "annotation_note": "Stone item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making a stone pickaxe requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates the crafting affordance."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a stone sword consumes wood and stone.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires stone and table proximity.",
+      "annotation_note": "Wood item remains part of stone weapon recipe."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making a stone sword consumes stone.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood and table proximity.",
+      "annotation_note": "Stone item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making a stone sword requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates the crafting affordance."
+    },
+    {
+      "from_achievement": "make_stone_pickaxe",
+      "to_achievement": "collect_iron",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: collecting iron requires a stone pickaxe.",
+      "confidence": 0.98,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Direct rule dependency.",
+      "annotation_note": "Tool gate for iron collection."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron pickaxe consumes wood, coal, and iron.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires coal, iron, table, and furnace proximity.",
+      "annotation_note": "Wood is part of the iron tool recipe."
+    },
+    {
+      "from_achievement": "collect_coal",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron pickaxe consumes coal.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood, iron, table, and furnace proximity.",
+      "annotation_note": "Coal item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "collect_iron",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron pickaxe consumes iron.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood, coal, table, and furnace proximity.",
+      "annotation_note": "Iron item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making an iron pickaxe requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates one needed crafting affordance."
+    },
+    {
+      "from_achievement": "place_furnace",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making an iron pickaxe requires being near a furnace.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes furnace proximity is achieved through place_furnace.",
+      "annotation_note": "Furnace creates one needed crafting affordance."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron sword consumes wood, coal, and iron.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires coal, iron, table, and furnace proximity.",
+      "annotation_note": "Wood is part of the iron weapon recipe."
+    },
+    {
+      "from_achievement": "collect_coal",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron sword consumes coal.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood, iron, table, and furnace proximity.",
+      "annotation_note": "Coal item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "collect_iron",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: making an iron sword consumes iron.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Also requires wood, coal, table, and furnace proximity.",
+      "annotation_note": "Iron item is directly consumed by the craft."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making an iron sword requires being near a table.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes table proximity is achieved through place_table.",
+      "annotation_note": "Table creates one needed crafting affordance."
+    },
+    {
+      "from_achievement": "place_furnace",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "unlock",
+      "evidence_source": "Crafter manual context: making an iron sword requires being near a furnace.",
+      "confidence": 0.9,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Assumes furnace proximity is achieved through place_furnace.",
+      "annotation_note": "Furnace creates one needed crafting affordance."
+    },
+    {
+      "from_achievement": "make_iron_pickaxe",
+      "to_achievement": "collect_diamond",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: collecting diamond requires an iron pickaxe.",
+      "confidence": 0.98,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Direct rule dependency.",
+      "annotation_note": "Tool gate for diamond collection."
+    },
+    {
+      "from_achievement": "collect_sapling",
+      "to_achievement": "place_plant",
+      "edge_type": "hard_prerequisite",
+      "evidence_source": "Crafter manual context: placing a plant consumes sapling.",
+      "confidence": 0.95,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Requires grass placement context.",
+      "annotation_note": "Sapling item is directly consumed."
+    },
+    {
+      "from_achievement": "place_plant",
+      "to_achievement": "eat_plant",
+      "edge_type": "contextual_dependency",
+      "evidence_source": "Crafter manual context: plant placement and eating are context dependent.",
+      "confidence": 0.55,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Plant growth/eating mechanics are not fully specified by the compact manual context.",
+      "annotation_note": "Treat as contextual rather than hard prerequisite."
+    },
+    {
+      "from_achievement": "make_wood_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.6,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Weapon likely reduces difficulty but is not annotated as necessary."
+    },
+    {
+      "from_achievement": "make_stone_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.65,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Stone weapon likely helps more than wood weapon."
+    },
+    {
+      "from_achievement": "make_iron_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.7,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Iron weapon likely helps combat but is not necessary."
+    },
+    {
+      "from_achievement": "make_wood_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.6,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Weapon likely reduces difficulty but is not annotated as necessary."
+    },
+    {
+      "from_achievement": "make_stone_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.65,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Stone weapon likely helps more than wood weapon."
+    },
+    {
+      "from_achievement": "make_iron_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "evidence_source": "Crafter manual context: swords are combat-relevant tools.",
+      "confidence": 0.7,
+      "is_evaluation_only": true,
+      "uncertainty_note": "Combat may be possible without this sword.",
+      "annotation_note": "Iron weapon likely helps combat but is not necessary."
+    }
+  ]
+}

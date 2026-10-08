@@ -1,0 +1,4 @@
+arm,description,frontier_size_gt_1_count,frontier_size_gt_1_share,frontier_size_max,frontier_size_mean,frontier_size_min,mean_attempts_per_chain,source,total_attempts
+R,descriptive realised challenge audit; not a continuation or significance gate,336,0.9655172413793104,4,3.014367816091954,1,43.5,selector,348
+UQ,descriptive realised challenge audit; not a continuation or significance gate,322,0.9787234042553191,4,3.082066869300912,1,41.125,selector,329
+ES,descriptive realised challenge audit; not a continuation or significance gate,333,0.9940298507462687,4,3.08955223880597,1,41.875,selector,335

@@ -1,0 +1,17 @@
+arm,count,pair_key,source
+R,86,A|B,selector
+R,102,B|C,selector
+R,107,B|D,selector
+R,105,B|E,selector
+R,1,C|D,selector
+R,4,C|E,selector
+UQ,109,A|B,selector
+UQ,89,B|C,selector
+UQ,117,B|D,selector
+UQ,109,B|E,selector
+UQ,1,C|D,selector
+UQ,3,C|E,selector
+ES,168,A|B,selector
+ES,168,B|C,selector
+ES,72,B|D,selector
+ES,80,B|E,selector

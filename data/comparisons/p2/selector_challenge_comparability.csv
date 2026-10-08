@@ -1,0 +1,4 @@
+comparable_count,description,left,right,selected_pair_differing_count,selected_pair_differing_share,source
+196,same chain/world/challenge-index and identical multi-candidate frontier,R,UQ,24,0.12244897959183673,selector
+74,same chain/world/challenge-index and identical multi-candidate frontier,R,ES,47,0.6351351351351351,selector
+69,same chain/world/challenge-index and identical multi-candidate frontier,UQ,ES,48,0.6956521739130435,selector

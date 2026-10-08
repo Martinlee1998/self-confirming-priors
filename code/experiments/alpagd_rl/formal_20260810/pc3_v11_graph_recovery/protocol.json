@@ -1,0 +1,29 @@
+{
+  "schema": "pc3-v11-graph-recovery-protocol/v1",
+  "frozen_at": "2026-08-26T00:00:00+10:00",
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914],
+  "targets": {"A": "place_table", "B": "make_wood_pickaxe", "C": "collect_stone", "D": "make_stone_pickaxe", "E": "collect_iron"},
+  "permutations": {
+    "P1": {"delete": ["A", "B"], "insert": ["B", "A"], "wrong_order": "BACDE", "acquisition_worlds": [1300001, 1300040], "evaluation_worlds": [1310001, 1310100]},
+    "P2": {"delete": ["B", "C"], "insert": ["C", "B"], "wrong_order": "ACBDE", "acquisition_worlds": [1320001, 1320040], "evaluation_worlds": [1330001, 1330100]}
+  },
+  "streams": [0, 1],
+  "acquisition_worlds_per_controller_stream": 40,
+  "evaluation_worlds_per_controller_stream": 100,
+  "horizon": 10000,
+  "target_window": 1000,
+  "arms": {
+    "O": "fixed correct transitive-closure graph",
+    "F": "fixed edge-matched corrupted language graph",
+    "U": "same corrupted language graph, updated only from public first-hit evidence during acquisition",
+    "D": "all directed edges independently Beta(1,1), no directed/language information, same updater and schedule as U"
+  },
+  "pairing": "within controller/world/stream, arms receive identical target-uniform and action-uniform arrays",
+  "graph_privacy": "graph and correction/update flags remain inside TargetProvider; policy receives only target_onehot5, normalized_target_age, and v10 observable inputs",
+  "update": "on each public first hit t, earlier first-hit s adds s->t positive and t->s counterevidence; pending evidence is applied at each 1000-action target-window boundary or terminal; graph persists across acquisition worlds within controller/stream; target is reselected after hit, window boundary, or terminal; GRU hidden is retained and target age resets",
+  "freeze": "U/D graphs freeze after the 40th acquisition world; evaluation performs no graph update and no optimizer step",
+  "target_recovery": "TV is averaged over the same fixed 31 non-complete achieved masks at age zero, querying O/F/U counterfactually in identical contexts; it is not rollout marginal target frequency",
+  "primary": ["damage=R(O)-R(F)", "target_recovery=TV(F,O)-TV(U,O)", "behavior=R(U)-R(F)", "recovery_fraction=behavior/damage", "language_value=R(U)-R(D)"],
+  "descriptive": ["Q", "full_chain", "E_hit", "native_return"],
+  "fatal_only": ["process/model/environment failure", "nonfinite", "arm/data mixing", "corrupt output", "checkpoint load failure"]
+}

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this research code and dataset if you use them."
+type: software
+title: "Self-confirming priors: research code and data"
+authors:
+  - family-names: Li
+    given-names: Yanqi
+version: 1.0.0
+date-released: 2026-10-08
+url: "https://github.com/Martinlee1998/self-confirming-priors"
+repository-code: "https://github.com/Martinlee1998/self-confirming-priors"
+keywords:
+  - reinforcement learning
+  - structural priors
+  - achievement graphs
+  - evidence seeking

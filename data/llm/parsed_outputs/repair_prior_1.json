@@ -1,0 +1,590 @@
+{
+  "schema_version": "alpagd_graph_prior_schema_v1",
+  "provider_model": "deepseek-v4-pro",
+  "prompt_hash": "sha256:61859d06993ec7f75e41cc7caaf491364c207209a4c921e4a4db386fcb49f5b4",
+  "environment": "Crafter",
+  "source_context_id": "crafter_achievements_v1",
+  "node_priors": [
+    {
+      "achievement_id": "collect_coal",
+      "name": "Collect Coal",
+      "description": "Gather coal from coal deposits in the environment.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Core resource achievement, part of the evaluation set.",
+      "uncertainty_note": "Manual specifies requirement of wood pickaxe; no other dependencies known."
+    },
+    {
+      "achievement_id": "collect_diamond",
+      "name": "Collect Diamond",
+      "description": "Mine diamond ore using an iron pickaxe.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "High-tier resource achievement, part of the evaluation set.",
+      "uncertainty_note": "Manual specifies requirement of iron pickaxe; no other dependencies known."
+    },
+    {
+      "achievement_id": "collect_drink",
+      "name": "Collect Drink",
+      "description": "Collect water or drinkable liquid.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Basic survival achievement, ensures player understands collection mechanics.",
+      "uncertainty_note": "No prerequisites mentioned; drink from water sources without tools."
+    },
+    {
+      "achievement_id": "collect_iron",
+      "name": "Collect Iron",
+      "description": "Mine iron ore using a stone pickaxe.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Intermediate resource, needed for advanced tools and achievements.",
+      "uncertainty_note": "Manual specifies stone pickaxe requirement; no other dependencies."
+    },
+    {
+      "achievement_id": "collect_sapling",
+      "name": "Collect Sapling",
+      "description": "Obtain a sapling by interacting with grass.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Key to starting agriculture; low probability drop adds challenge.",
+      "uncertainty_note": "Manual notes low probability from grass; no other sources known."
+    },
+    {
+      "achievement_id": "collect_stone",
+      "name": "Collect Stone",
+      "description": "Break stone blocks using a wood pickaxe.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Fundamental building material, required for many recipes.",
+      "uncertainty_note": "Manual states wood pickaxe is prerequisite."
+    },
+    {
+      "achievement_id": "collect_wood",
+      "name": "Collect Wood",
+      "description": "Chop trees to gather wood, no tool required.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Most basic resource, essential for crafting and placement.",
+      "uncertainty_note": "No prerequisites, universally available."
+    },
+    {
+      "achievement_id": "defeat_skeleton",
+      "name": "Defeat Skeleton",
+      "description": "Kill a skeleton enemy.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Combat achievement; tests ability to handle hostile mobs.",
+      "uncertainty_note": "Exact requirements ambiguous; weapons likely facilitate but may not be mandatory."
+    },
+    {
+      "achievement_id": "defeat_zombie",
+      "name": "Defeat Zombie",
+      "description": "Kill a zombie enemy.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Combat achievement; zombies may be weaker but still dangerous.",
+      "uncertainty_note": "Weapons likely aid, but bare hands combat might be possible."
+    },
+    {
+      "achievement_id": "eat_cow",
+      "name": "Eat Cow",
+      "description": "Consume food obtained from a cow.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Food achievement; may require killing a cow and cooking/eating its meat.",
+      "uncertainty_note": "Manual lacks details; weapons likely needed to obtain meat, but ambiguity remains."
+    },
+    {
+      "achievement_id": "eat_plant",
+      "name": "Eat Plant",
+      "description": "Eat fruit or vegetable grown from a planted sapling.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Sustainable food achievement; encourages farming.",
+      "uncertainty_note": "Implies need for placed plant to bear edible produce; wild edibles might exist, raising uncertainty."
+    },
+    {
+      "achievement_id": "make_iron_pickaxe",
+      "name": "Make Iron Pickaxe",
+      "description": "Craft an iron pickaxe at a table and furnace.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Top-tier tool; required for diamond collection.",
+      "uncertainty_note": "Manual lists exact materials: wood, coal, iron, with table and furnace in proximity."
+    },
+    {
+      "achievement_id": "make_iron_sword",
+      "name": "Make Iron Sword",
+      "description": "Craft an iron sword at a table and furnace.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Best weapon; significantly eases combat and hunting.",
+      "uncertainty_note": "Same materials as iron pickaxe; need both table and furnace."
+    },
+    {
+      "achievement_id": "make_stone_pickaxe",
+      "name": "Make Stone Pickaxe",
+      "description": "Craft a stone pickaxe at a table.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Upgraded tool needed to mine iron.",
+      "uncertainty_note": "Requires wood and stone, plus a table."
+    },
+    {
+      "achievement_id": "make_stone_sword",
+      "name": "Make Stone Sword",
+      "description": "Craft a stone sword at a table.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Intermediate weapon, better than wood sword.",
+      "uncertainty_note": "Same materials as stone pickaxe; table required."
+    },
+    {
+      "achievement_id": "make_wood_pickaxe",
+      "name": "Make Wood Pickaxe",
+      "description": "Craft a wooden pickaxe at a table.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "First tool; enables gathering of stone and coal.",
+      "uncertainty_note": "Requires only wood and a table."
+    },
+    {
+      "achievement_id": "make_wood_sword",
+      "name": "Make Wood Sword",
+      "description": "Craft a wooden sword at a table.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Basic melee weapon; can help with early combat and hunting.",
+      "uncertainty_note": "Requires wood and a table."
+    },
+    {
+      "achievement_id": "place_furnace",
+      "name": "Place Furnace",
+      "description": "Place a furnace block using stone.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Allows smelting, required for iron tools.",
+      "uncertainty_note": "Consumes stone; placement surfaces limited to grass, sand, path."
+    },
+    {
+      "achievement_id": "place_plant",
+      "name": "Place Plant",
+      "description": "Plant a sapling on grass.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "First step to agriculture; leads to eat_plant.",
+      "uncertainty_note": "Sapling required; only valid on grass."
+    },
+    {
+      "achievement_id": "place_stone",
+      "name": "Place Stone",
+      "description": "Place a stone block on various surfaces.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Building achievement; versatile placement options.",
+      "uncertainty_note": "Consumes stone; can be placed on many terrain types including water."
+    },
+    {
+      "achievement_id": "place_table",
+      "name": "Place Table",
+      "description": "Place a crafting table using wood.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Essential for making tools and weapons; central to progression.",
+      "uncertainty_note": "Consumes wood; limited placement surfaces."
+    },
+    {
+      "achievement_id": "wake_up",
+      "name": "Wake Up",
+      "description": "Wake up after sleeping.",
+      "prior_relevance_probability": 0.95,
+      "confidence": 0.95,
+      "rationale": "Restores energy; may reset spawn point or advance time.",
+      "uncertainty_note": "No known prerequisites; sleep action seems universally available."
+    }
+  ],
+  "edge_priors": [
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "place_table",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Wood is consumed to place a table, as per placement rules.",
+      "uncertainty_note": "Direct material requirement; no alternative known.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "place_furnace",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Furnace placement consumes stone; collecting stone is necessary.",
+      "uncertainty_note": "Material requirement unambiguous.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "place_stone",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Placing a stone block consumes stone from inventory.",
+      "uncertainty_note": "Direct consumption rule.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_sapling",
+      "to_achievement": "place_plant",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Placing a plant consumes a sapling.",
+      "uncertainty_note": "Stated requirement; only grass surface constraint.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_wood_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Crafting wood pickaxe consumes wood.",
+      "uncertainty_note": "Material requirement explicit.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_wood_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Must be near a table to craft wood pickaxe.",
+      "uncertainty_note": "Manual states 'requires being near a table'.",
+      "known_counterexample_possibility": "Any table, not necessarily one you placed, but environment likely lacks natural tables."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_wood_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Crafting wood sword consumes wood.",
+      "uncertainty_note": "Material requirement explicit.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_wood_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Must be near a table to craft wood sword.",
+      "uncertainty_note": "Same table requirement as wood pickaxe.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Crafting stone pickaxe consumes wood along with stone.",
+      "uncertainty_note": "Material requirement explicit.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Primary material for stone pickaxe.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_stone_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Must be near a table for this craft.",
+      "uncertainty_note": "Table proximity required.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Stone sword recipe includes wood.",
+      "uncertainty_note": "Material requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_stone",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Primary material for stone sword.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_stone_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Must be near a table for this craft.",
+      "uncertainty_note": "Table proximity required.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Iron pickaxe recipe includes wood.",
+      "uncertainty_note": "Material requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_coal",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Coal is needed for iron pickaxe crafting.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_iron",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Primary material for iron pickaxe.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Need table proximity for crafting.",
+      "uncertainty_note": "Table requirement stated.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_furnace",
+      "to_achievement": "make_iron_pickaxe",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Furnace required for iron tool recipes.",
+      "uncertainty_note": "Manual specifies need for both table and furnace.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_wood",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Iron sword recipe includes wood.",
+      "uncertainty_note": "Material requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_coal",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Coal required for iron sword crafting.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "collect_iron",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Primary material for iron sword.",
+      "uncertainty_note": "Explicit requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_table",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Need table proximity for crafting.",
+      "uncertainty_note": "Table requirement stated.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_furnace",
+      "to_achievement": "make_iron_sword",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Furnace required for iron tool recipes.",
+      "uncertainty_note": "Both table and furnace needed.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "make_wood_pickaxe",
+      "to_achievement": "collect_stone",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Manual states collecting stone requires a wood pickaxe.",
+      "uncertainty_note": "Direct rule.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "make_wood_pickaxe",
+      "to_achievement": "collect_coal",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Collecting coal requires a wood pickaxe, per manual.",
+      "uncertainty_note": "Explicit rule.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "make_stone_pickaxe",
+      "to_achievement": "collect_iron",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Collecting iron requires a stone pickaxe.",
+      "uncertainty_note": "Manual specifies tool requirement.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "make_iron_pickaxe",
+      "to_achievement": "collect_diamond",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.99,
+      "confidence": 0.95,
+      "rationale": "Collecting diamond requires an iron pickaxe.",
+      "uncertainty_note": "Tool requirement explicit.",
+      "known_counterexample_possibility": "None observed."
+    },
+    {
+      "from_achievement": "place_plant",
+      "to_achievement": "eat_plant",
+      "edge_type": "hard_prerequisite",
+      "prior_probability": 0.8,
+      "confidence": 0.6,
+      "rationale": "Eating a plant likely requires harvesting from a grown plant, which starts from placement.",
+      "uncertainty_note": "Possible wild edible plants not documented; sapling might be required for any plant-based food.",
+      "known_counterexample_possibility": "Wild plants could exist, but manual only mentions sapling from grass."
+    },
+    {
+      "from_achievement": "make_wood_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.5,
+      "confidence": 0.5,
+      "rationale": "Weapon likely increases chance of defeating skeletons.",
+      "uncertainty_note": "Manual lacks combat details; bare hands may be possible but less effective.",
+      "known_counterexample_possibility": "Defeating skeletons without weapon might be possible."
+    },
+    {
+      "from_achievement": "make_wood_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.5,
+      "confidence": 0.5,
+      "rationale": "Weapon assists in combat against zombies.",
+      "uncertainty_note": "Zombies may be weaker but weapon speeds up process.",
+      "known_counterexample_possibility": "Hand-to-hand combat could succeed."
+    },
+    {
+      "from_achievement": "make_wood_sword",
+      "to_achievement": "eat_cow",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.4,
+      "confidence": 0.4,
+      "rationale": "Killing a cow for meat likely requires a weapon.",
+      "uncertainty_note": "Cow behavior (passive/hostile) unclear; maybe cows drop meat without fighting?",
+      "known_counterexample_possibility": "Could possibly eat cow without weapon if cows are passive and drop meat on death? Unlikely."
+    },
+    {
+      "from_achievement": "make_stone_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.55,
+      "confidence": 0.55,
+      "rationale": "Stone sword better than wood; stronger facilitation.",
+      "uncertainty_note": "Damage output likely higher.",
+      "known_counterexample_possibility": "Same as wood sword."
+    },
+    {
+      "from_achievement": "make_stone_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.55,
+      "confidence": 0.55,
+      "rationale": "Better weapon yields faster kills.",
+      "uncertainty_note": "Uncertain advantage magnitude.",
+      "known_counterexample_possibility": "Possible without."
+    },
+    {
+      "from_achievement": "make_stone_sword",
+      "to_achievement": "eat_cow",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.45,
+      "confidence": 0.45,
+      "rationale": "Stone sword more effective for hunting.",
+      "uncertainty_note": "Cow difficulty unknown.",
+      "known_counterexample_possibility": "Other hunting methods possibly exist."
+    },
+    {
+      "from_achievement": "make_iron_sword",
+      "to_achievement": "defeat_skeleton",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.7,
+      "confidence": 0.7,
+      "rationale": "Iron sword is top-tier weapon, greatly easing skeleton kills.",
+      "uncertainty_note": "Significant damage increase expected.",
+      "known_counterexample_possibility": "Skeletons still killable without, but iron sword trivializes."
+    },
+    {
+      "from_achievement": "make_iron_sword",
+      "to_achievement": "defeat_zombie",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.7,
+      "confidence": 0.7,
+      "rationale": "Iron sword drastically improves zombie combat.",
+      "uncertainty_note": "Likely one-hit kills?",
+      "known_counterexample_possibility": "Still possible without, but much harder."
+    },
+    {
+      "from_achievement": "make_iron_sword",
+      "to_achievement": "eat_cow",
+      "edge_type": "soft_facilitator",
+      "prior_probability": 0.6,
+      "confidence": 0.6,
+      "rationale": "Iron sword makes cow hunting trivial if needed.",
+      "uncertainty_note": "Cow attack required? Maybe cows are instantly harvested?",
+      "known_counterexample_possibility": "Could be non-violent method to eat cow."
+    }
+  ],
+  "global_uncertainty_note": "This prior graph is built solely from the provided Crafter manual context and is not exhaustive. Several achievements (especially defeat_*, eat_*) have ambiguous dependencies due to missing combat/hunting mechanics details. Hard prerequisites are assigned high confidence only where the manual explicitly specifies resource/tool requirements. The graph does not consider possible drop items from mobs, environmental variations, or alternative crafting paths not described in the manual."
+}

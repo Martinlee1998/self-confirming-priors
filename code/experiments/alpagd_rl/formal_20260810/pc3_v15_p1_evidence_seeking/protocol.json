@@ -1,0 +1,24 @@
+{
+  "schema": "pc3-v15-p1-evidence-seeking-protocol/v1",
+  "frozen_at": "2026-08-28T00:00:00+10:00",
+  "relationship_to_v13": "within-fixture P1 relation-position replication; never pool with P2",
+  "corruption": {"name": "P1", "delete": ["A", "B"], "insert": ["B", "A"], "wrong_order": "BACDE"},
+  "acquisition_worlds": [1400001, 1400040],
+  "evaluation_worlds": [1410001, 1410100],
+  "mechanical_eligibility_precheck": {
+    "method": "construct one handoff per seed and immediately close it; no policy or provider execution",
+    "acquisition": {"candidate_range": [1400001, 1400040], "accepted": 40, "rejected": []},
+    "evaluation": {"candidate_range": [1410001, 1410100], "accepted": 100, "rejected": []},
+    "outcome_blind": true
+  },
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914],
+  "streams": [0, 1],
+  "horizon": 10000,
+  "acquisition_arms": {"N": "ordinary graph-private provider from P1 graph", "ES": "v13 non-oracle frontier challenge from same P1 graph"},
+  "evaluation_arms": {"O": "correct design ceiling", "F": "fixed P1 graph", "N": "frozen natural P1 graph", "ES": "frozen evidence-seeking P1 graph"},
+  "freeze": "evaluation uses ordinary selection only; graph updates, ES, and optimizer steps are absent",
+  "pair_memory": {"max_pair_attempts_per_world": 1, "max_challenges_per_achieved_mask_per_world": 1, "max_challenges_per_world": 3, "zero_yield_attempts_before_cooldown": 3, "cooldown_worlds": 3, "retire_on_first_provider_decision_movement": true},
+  "soft_progress_policy": {"early_world_id": 1400010, "continue_if": "selector mechanics are healthy; evidence and provider movement are progress signals, not stop gates", "if_mechanically_inert": "permit one minimal frontier-rule repair with a fresh namespace; do not tune on weak result size"},
+  "scope_boundary": "P1/P2 relation-position replication inside the same five-target fixture only",
+  "fatal_only": ["model/environment/process failure", "nonfinite", "arm/data mixing", "checkpoint failure", "corrupt output"]
+}

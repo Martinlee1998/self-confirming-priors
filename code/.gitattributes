@@ -1,0 +1,2 @@
+# This module is identified by its original byte hash in the environment adapter.
+experiments/alpagd_rl/formal_20260810/runtime/formal_patch.py -text

@@ -1,0 +1,39 @@
+{
+  "schema": "pc3-v12-evidence-availability-protocol/v1",
+  "frozen_at": "2026-08-26T00:00:00+10:00",
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914],
+  "streams": [0, 1],
+  "targets": {"A": "place_table", "B": "make_wood_pickaxe", "C": "collect_stone", "D": "make_stone_pickaxe", "E": "collect_iron"},
+  "corruption": {"name": "P2", "delete": ["B", "C"], "insert": ["C", "B"], "wrong_order": "ACBDE"},
+  "acquisition_worlds": [1340001, 1340040],
+  "evaluation_worlds": [1350001, 1350100],
+  "acquisition_worlds_per_controller_stream": 40,
+  "evaluation_worlds_per_controller_stream": 100,
+  "horizon": 10000,
+  "target_window": 1000,
+  "acquisition_arms": {
+    "N": "natural graph-private provider initialized from the fixed P2-corrupted graph",
+    "E": "same provider and graph, with a public-achievement-only A-then-B-then-C acquisition instrument"
+  },
+  "evaluation_arms": {
+    "O": "fixed correct graph",
+    "F": "fixed P2-corrupted graph",
+    "N": "frozen naturally acquired graph",
+    "E": "frozen exposure-acquired graph"
+  },
+  "instrument": "acquisition E only: target A while A is unfinished; after A target B while B is unfinished; after B target C while C is unfinished; after C use the ordinary graph provider",
+  "instrument_boundaries": "public achievement state only; no direct graph/evidence write, no hidden state read, no policy input, and absent from evaluation",
+  "update": "identical first-hit updater in N and E; only real public environment first hits add earlier-to-later positive and reverse counterevidence; flush at each 1000-action boundary or terminal",
+  "pairing": "within controller/world/stream, N/E acquisition share initial corrupted graph and controller/stream/world/action uniforms, and provider target uniforms whenever applicable; evaluation O/F/N/E share world, target uniforms and action uniforms",
+  "freeze": "after acquisition world 40, N/E graphs freeze; evaluation has no instrument, graph update, or optimizer step",
+  "primary": [
+    "exposure manipulation: real B-before-C pair evidence",
+    "target recovery: TV(N,O)-TV(E,O) over the same 31 noncomplete masks, n=8 independent controller-stream chains",
+    "behavior: R(E)-R(N), n=100 independent evaluation worlds",
+    "R(E)-R(F)",
+    "(R(E)-R(F))/(R(O)-R(F)), with O-F as reference"
+  ],
+  "descriptive": ["Q", "full_chain", "E_hit", "native_return", "posterior values"],
+  "analysis_policy": "CI and SESOI are descriptive, not gates; no rerun, added sample, or instrument tuning for positive, zero, or negative results",
+  "fatal_only": ["model/environment/process failure", "nonfinite", "arm/data mixing", "checkpoint load failure", "instrument violates public rule", "corrupt output"]
+}

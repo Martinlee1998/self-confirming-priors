@@ -1,0 +1,24 @@
+{
+  "schema": "pc3-v18-discriminating-selector-baselines-protocol/v1",
+  "frozen_at": "2026-08-28T00:00:00+10:00",
+  "relationship_to_v17": "v17 smoke was mechanically nondiscriminating because its exactly-one-blocker frontier yielded one candidate; v18 is the one prospective frontier-only repair and v17 is retained unchanged.",
+  "corruption": "selected P1 or P2 graph in the PC3 frozen-provider fixture",
+  "controllers": [2026081911, 2026081912, 2026081913, 2026081914], "streams": [0, 1],
+  "acquisition_worlds": [1440001, 1440040], "evaluation_worlds": [1450001, 1450100], "horizon": 10000, "target_window": 1000,
+  "fixtures": {
+    "p2": {"corruption": "P2", "acquisition_worlds": [1440001, 1440040], "evaluation_worlds": [1450001, 1450100]},
+    "p1": {"corruption": "P1", "acquisition_worlds": [1460001, 1460040], "evaluation_worlds": [1470001, 1470100]}
+  },
+  "acquisition_arms": {"N": "ordinary graph-private provider", "R": "matched-random common-frontier challenge", "UQ": "uncertainty-only common-frontier challenge", "ES": "single-edge decision-impact common-frontier challenge"},
+  "evaluation_arms": {"O": "fixed correct graph", "F": "fixed corrupted graph for the selected fixture", "N": "frozen natural graph", "R": "frozen random graph", "UQ": "frozen uncertainty graph", "ES": "frozen ES graph"},
+  "common_frontier": "for every unfinished target, emit one candidate for every unfinished current-provider blocker edge with p>0.5 and provider distribution(blocker)>0; retain v17 used-mask, used-pair, cooldown, retirement, and maximum-challenge exclusions.",
+  "R_rule": "uniform random selection from sorted common frontier using the independent deterministic selector stream.",
+  "UQ_rule": "maximum binary entropy of the selected candidate edge belief only; exact ties use the independent selector stream. No decision impact, corruption label, reference graph, correct order, or outcomes are read.",
+  "ES_rule": "maximum target-distribution impact from removing only that candidate edge in a graph copy.",
+  "pair_memory": {"max_challenges_per_world": 3, "zero_yield_attempts_before_cooldown": 3, "cooldown_worlds": 3, "retire_on_first_provider_decision_movement": true},
+  "challenge_audit": ["frontier_size", "candidate_pair_keys", "selected_selector_score", "selected_evidence_edge_probability"],
+  "freeze": "all acquired graphs freeze before evaluation; evaluation has ordinary selection only, no challenge, update, or optimizer step.",
+  "post_revision_policy": "No subsequent frontier or selector tuning is permitted for positive, null, or negative effect size; only fatal mechanical failures may invalidate a run.",
+  "boundary_replication": "P1 is a pre-fixed second-corruption boundary replication of the v18 rules. Its outcome cannot change the selector or frontier rule.",
+  "forbidden_inputs": ["corruption_label", "reference_graph", "correct_order", "hidden_state", "outcome_result", "policy_input"]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "pc3-v16-sea-adapted-dependency-recovery-protocol/v1",
+  "status": "implementation_only_no_behavior_rows_executed",
+  "method_label": "SEA-adapted / SEA-style mechanism baseline",
+  "official_sea_claim": "forbidden: this is not official SEA or a faithful SEA reproduction",
+  "input": "exactly one controller x stream chain of 40 existing acquisition JSON rows; only arms.<source_arm>.first_hit_order is read",
+  "source_arm": "N",
+  "recovery": "for every ordered pair in a public first-hit sequence, add one directed precedence count; form independent Beta(1+forward, 1+reverse) edge posteriors",
+  "forbidden_inputs": ["corruption_label", "oracle_graph", "reference_graph", "correct_order", "hidden_state", "policy_input", "evaluation_outcome"],
+  "fixtures": {"p1": "PC3-v15 runner", "p2": "PC3-v13 runner"},
+  "provider_interface": "v11 GraphState and TargetProvider; one recovered graph freezes per controller x stream chain before evaluation",
+  "evaluation": "same fixture-specific fresh PC3 handoffs and frozen-policy runner; ordinary selection only, no update, no SEA-style acquisition rule, optimizer_steps=0, and the runner's original evaluation uniform kinds 21/22",
+  "fairness": "use the same retained acquisition rows and fresh evaluation worlds as the compared updater arms; do not tune posterior weights using evaluation outcomes",
+  "reporting": "report null or negative outcomes unchanged; comparison is limited to this five-target fixture"
+}
